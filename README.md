@@ -10,8 +10,17 @@ Table Relationships (ER Diagram Concept)
                    [Interviews]               [JobOffers]
 
 
+Job Application System (MySQL Project)
+This Job Application Management System is a MySQL database project designed to manage job postings, applications, interviews, and job offers efficiently.
 
-
+Key Features:
+Employers Table – Stores company details that post job vacancies.
+JobPostings Table – Contains job listings with details like title, description, location, and salary.
+Applicants Table – Holds information about job seekers, including resumes.
+JobApplications Table – Tracks applications with statuses such as Pending, Reviewed, Interview Scheduled, and Hired.
+Interviews Table – Manages interview schedules, including dates and modes (Online/In-Person).
+JobOffers Table – Handles job offer details, including salary and acceptance status.
+This database ensures efficient tracking of the hiring process, from job posting to applicant selection. It provides data integrity and relational consistency through foreign keys and constraints, making it ideal for integration into a web-based job portal
 
 
 
@@ -34,3 +43,6 @@ Detailed Table Mapping
 | **JobApplications**  | `application_id` (PK)  | `job_id` (FK) → JobPostings <br> `applicant_id` (FK) → Applicants | Tracks job applications and their statuses. |
 | **Interviews**       | `interview_id` (PK)    | `application_id` (FK) → JobApplications             | Schedules interviews for applicants.           |
 | **JobOffers**        | `offer_id` (PK)        | `application_id` (FK) → JobApplications             | Stores job offer details for applicants.       |
+
+
+
