@@ -14,6 +14,7 @@ Table Relationships (ER Diagram Concept)
 
 
 
+
 Explanation of Relationships
 One Employer can post multiple jobs → (Employers → JobPostings).
 One Job Posting can receive multiple applications → (JobPostings → JobApplications).
