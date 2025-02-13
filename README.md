@@ -10,6 +10,15 @@ Table Relationships (ER Diagram Concept)
                    [Interviews]               [JobOffers]
 
 
+| **Parent Table**      | **Child Table**       | **Foreign Key Relationship**                         |
+|----------------------|----------------------|----------------------------------------------------|
+| **Employers**        | JobPostings          | `employer_id` (FK) → Employers (`employer_id`)    |
+| **JobPostings**      | JobApplications      | `job_id` (FK) → JobPostings (`job_id`)            |
+| **Applicants**       | JobApplications      | `applicant_id` (FK) → Applicants (`applicant_id`) |
+| **JobApplications**  | Interviews          | `application_id` (FK) → JobApplications (`application_id`) |
+| **JobApplications**  | JobOffers           | `application_id` (FK) → JobApplications (`application_id`) |
+
+
 
 Detailed Table Mapping
 
