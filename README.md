@@ -10,25 +10,7 @@ Table Relationships (ER Diagram Concept)
                    [Interviews]               [JobOffers]
 
 
-ER Diagram Representation (Table Relationships)
 
-
-+---------------+      +-------------+      +------------------+      +-------------+
-|  Employers   |      | JobPostings |      | JobApplications  |      | Applicants  |
-+---------------+      +-------------+      +------------------+      +-------------+
-| employer_id  | <--> | employer_id  |      | application_id   | <--> | applicant_id |
-| company_name |      | job_id       | <--> | job_id           |      | full_name    |
-| email        |      | job_title    |      | applicant_id     |      | email       |
-+---------------+      +-------------+      +------------------+      +-------------+
-                                  |                                   |
-                                  |                                   |
-                         +-----------------+             +-----------------+
-                         |  Interviews    |             |   JobOffers     |
-                         +-----------------+             +-----------------+
-                         | interview_id   |             | offer_id        |
-                         | application_id |             | application_id  |
-                         | interview_date |             | offered_salary  |
-                         +-----------------+             +-----------------+
 
 
 
