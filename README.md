@@ -10,13 +10,34 @@ Table Relationships (ER Diagram Concept)
                    [Interviews]               [JobOffers]
 
 
-| **Parent Table**      | **Child Table**       | **Foreign Key Relationship**                         |
-|----------------------|----------------------|----------------------------------------------------|
-| **Employers**        | JobPostings          | `employer_id` (FK) → Employers (`employer_id`)    |
-| **JobPostings**      | JobApplications      | `job_id` (FK) → JobPostings (`job_id`)            |
-| **Applicants**       | JobApplications      | `applicant_id` (FK) → Applicants (`applicant_id`) |
-| **JobApplications**  | Interviews          | `application_id` (FK) → JobApplications (`application_id`) |
-| **JobApplications**  | JobOffers           | `application_id` (FK) → JobApplications (`application_id`) |
+ER Diagram Representation (Table Relationships)
+
+
++---------------+      +-------------+      +------------------+      +-------------+
+|  Employers   |      | JobPostings |      | JobApplications  |      | Applicants  |
++---------------+      +-------------+      +------------------+      +-------------+
+| employer_id  | <--> | employer_id  |      | application_id   | <--> | applicant_id |
+| company_name |      | job_id       | <--> | job_id           |      | full_name    |
+| email        |      | job_title    |      | applicant_id     |      | email       |
++---------------+      +-------------+      +------------------+      +-------------+
+                                  |                                   |
+                                  |                                   |
+                         +-----------------+             +-----------------+
+                         |  Interviews    |             |   JobOffers     |
+                         +-----------------+             +-----------------+
+                         | interview_id   |             | offer_id        |
+                         | application_id |             | application_id  |
+                         | interview_date |             | offered_salary  |
+                         +-----------------+             +-----------------+
+
+
+
+Explanation of Relationships
+One Employer can post multiple jobs → (Employers → JobPostings).
+One Job Posting can receive multiple applications → (JobPostings → JobApplications).
+One Applicant can apply to multiple jobs → (Applicants → JobApplications).
+One Job Application can lead to one or more Interviews → (JobApplications → Interviews).
+One Job Application can result in one Job Offer → (JobApplications → JobOffers)
 
 
 
